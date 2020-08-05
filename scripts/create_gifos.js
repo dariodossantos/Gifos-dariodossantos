@@ -1,4 +1,5 @@
 var form;
+var blob;
 
 var subir_gif = function () {
 
@@ -205,10 +206,10 @@ finalizar.addEventListener('click', function () {
 
     recorder.stopRecording(function() {
 
-        var blob = recorder.getBlob();
+        blob = recorder.getBlob();
         /* invokeSaveAsDialog(blob); */
 
-        var form = new FormData();
+        form = new FormData();
         form.append('file', blob, 'myGif.gif');
         return form;
 
