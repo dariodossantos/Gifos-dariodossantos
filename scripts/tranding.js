@@ -22,7 +22,7 @@ function trending_txt() {
 
 
 function trending_img() {
-            fetch(`http://api.giphy.com/v1/gifs/trending?api_key=${api_key}&limit=3&offset=${offset_trandig}`)
+            fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${api_key}&limit=3&offset=${offset_trandig}`)
                 .then(request => request.json())
                 .then((respuesta) => {
                     car_1.src = respuesta.data[0].images.original_still.url; 

@@ -1,6 +1,6 @@
 /* API busqueda -> Traer los GIF */
 var get_busqueda = function(){
-    fetch(`http://api.giphy.com/v1/gifs/search?api_key=${api_key}&q=${search.value}&limit=12&offset=${offset}`)
+    fetch(`https://api.giphy.com/v1/gifs/search?api_key=${api_key}&q=${search.value}&limit=12&offset=${offset}`)
         .then(request => request.json())
         .then(respuesta => {
 
@@ -359,7 +359,7 @@ function mostrar_bus(respuesta) {
 }
 
 function get_autocompletar(event) {
-    fetch(`http://api.giphy.com/v1/gifs/search/tags?api_key=${api_key}&q=${search.value}&`)
+    fetch(`https://api.giphy.com/v1/gifs/search/tags?api_key=${api_key}&q=${search.value}&`)
         .then(request => request.json())
         .then( respuesta => {
  
