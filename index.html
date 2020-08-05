@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/flaticon.svg" sizes="any"/>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/62d79dc859.js" crossorigin="anonymous"></script>
+    <title>Gifos</title>
+</head>
+<body id="body">
+    <header id="header">
+        <div class="linea-violeta"></div>
+
+        <section class="contenedor">
+            <a><img src="images/logo-desktop.svg" alt="Logo Gifos" id="logo"></a>
+            <nav class="menu">
+                <input type="checkbox" id="checkbox" />
+                <span class="background-violeta linea1 hamburger"></span>
+                <span class="background-violeta hamburger"></span>
+                <span class="background-violeta hamburger"></span>
+                <ul class="background-violeta-op" id="ul-header">
+                    <li>
+                        <a class="montserrat-bold pad-a1 fuente-violeta" href="#" id="modo_nocturno">MODO NOCTURNO</a>
+                        <div class="flex"><div class="linea1"></div></div>
+                    </li>
+                    <li>
+                        <a class="montserrat-bold pad-a2 fuente-violeta" href="#" id="favoritos">FAVORITOS</a>
+                        <div class="flex"><div class="linea2"></div></div>
+                    </li>
+                    <li>
+                        <a class="montserrat-bold pad-a3 fuente-violeta" href="#" id="mis-gifos">MIS GIFOS</a>
+                        <div class="flex"><div class="linea3"></div></div>
+                    </li>
+                    <li>
+                        <a class="nav-agregar fuente-violeta borde-violeta" href="#" id="signo-mas">+</a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+
+    <main id="main">
+        <section id="main-gris">
+            <section class="titulo fuente-violeta">
+                <h1 class="montserrat-bold">Inspírate, busca, guarda, y crea los mejores <span class="gifos">GIFOS</span></h1>
+            </section>
+
+            <section class="busqueda">
+                <img class="imagen-busqueda" src="images/ilustra_header.svg" alt="Imagen Gifos">
+                <div class="input borde-violeta border-bottom-radius" id="input">
+                    <i class="fa fa-search fuente-gris"></i>
+                    <input class="input-busqueda background-blanco  montserrat-regular" type="text" placeholder="Busca GIFOS y más" autocomplete="off" id="search">
+                    <img class='img-lupa background-blanco' src="/images/icon-search.svg" alt="" id="close">
+                    <div class="autocompletar roboto-regular" id="autocompletar"></div>
+                </div>
+            </section>
+
+            <section class="seccion-res-bus montserrat-bold" id="seccion-res-bus">
+                <h4 class="fuente-violeta" id="res-bus-titulo"></h4>
+
+                <div class="resultado-bus" id="resultado-bus"></div>
+
+                <div class="btn-bus" id="btn-bus">
+                    <div class="btn-ver-mas borde-violeta fuente-violeta">VER MAS</div>
+                </div>
+            </section>
+
+            <section class="trending fuente-violeta" id="trending">
+                <h2 class="montserrat-bold">Trending:</h2>
+                <h3 class="montserrat-regular h3" id="trending-txt"></h3>
+                <h3 class="montserrat-regular h3" id="trending-txt2"></h3>
+                <h3 class="montserrat-regular h3" id="trending-txt3"></h3>
+                <h3 class="montserrat-regular h3" id="trending-txt4"></h3>
+                <h3 class="montserrat-regular h3" id="trending-txt5"></h3>
+            </section>
+        </section>
+
+        <section class="seccion-favoritos montserrat-bold" id="seccion-favoritos">
+            <div class="img-fav">
+                <img src="/images/icon-favoritos.svg" alt="mis gifos favoritos">
+            </div>
+
+            <h4 class="fuente-violeta">Favoritos</h4>
+
+            <div class="tarj-fav" id="tarjetas-favoritos"></div>
+
+            <div class="btn-fav" id="btn-fav">
+                <div class="btn-ver-mas borde-violeta fuente-violeta">VER MAS</div>
+            </div>
+        </section>
+
+        <section class="seccion-gifos montserrat-bold" id="seccion-gifos">
+            <div class="img-gif">
+                <img src="/images/icon-favoritos.svg" alt="mis gifos favoritos">
+            </div>
+
+            <h4 class="fuente-violeta">Mis Gifos</h4>
+
+            <div class="tarj-gif" id="tarjetas-gif"></div>
+
+            <div class="btn-gif" id="btn-gif">
+                <div class="btn-ver-mas borde-violeta fuente-violeta">VER MAS</div>
+            </div>
+        </section>
+
+        <section class="trending-gifos fuente-negro background-gris-clarito" id="main-gris-oscuro">
+            <h2 class="trending-gifos-h2 montserrat-bold">Trending GIFOS</h2>
+            <h3 class="trending-gifos-h3 roboto-regular">Mira los últimos</h3>
+            <h3 class="trending-gifos-h3 roboto-regular">GIFOS de nuestra comunidad.</h3>
+            <div class="carrusel">
+                <div class="flecha fuente-violeta borde-violeta" id="flecha-vol"> < </div>
+                <img class="img-carrusel carrusel-1" id="car-1">
+                <img class="img-carrusel carrusel-2" id="car-2">
+                <img class="img-carrusel carrusel-3" id="car-3">
+                <div class="flecha fuente-violeta borde-violeta" id="flecha-sig"> > </div>
+            </div>
+        </section>
+
+        <section class="seccion-crear-gifos" id="seccion-crear-gifos">
+
+            <div class="crear-gifos">
+                <img class="img-camara" id="img-camara" src="/images/camara.svg" alt="Camara Gifos">
+                <img class="img-luz"   src="/images/element-luz-camara.svg" alt="">
+                <div class="pantalla">
+                    <video class="video" id="video"></video>
+                    <span class="borde-arriba-izq"></span>
+                    <span class="borde-arriba-der"></span>
+                    <span class="borde-abajo-izq"></span>
+                    <span class="borde-abajo-der"></span>
+                    <h3 class="montserrat-bold h3-patalla fuente-violeta">Aquí podrás</h3>
+                    <h3 class="montserrat-bold h3-patalla fuente-violeta">crear tus propios <span class="fuente-verde">GIFOS</span></h3>
+                    <p class="roboto-regular fuente-negro p-black">¡Crea tu GIFO en sólo 3 pasos!</p>
+                    <p class="roboto-regular fuente-negro p-black">(sólo necesitas una cámara para grabar un video)</p>
+                </div>
+                <div class="bloque-img-pelicula">
+                    <img class="img-pelicula" id="img-pelicula" src="/images/pelicula.svg" alt="">                    
+                </div>
+            </div>
+
+            <div class="boton-crear-gifos roboto-regular">
+
+                <div class="bloque-btn-gif">
+                    <div class="btn-gif borde-violeta" id="btn-gif-1"><p class="gif-p fuente-violeta">1</p></div>
+                    <div class="btn-gif borde-violeta" id="btn-gif-2"><p class="gif-p fuente-violeta">2</p></div>
+                    <div class="btn-gif borde-violeta" id="btn-gif-3"><p class="gif-p fuente-violeta">3</p></div>
+                </div>
+
+                <div class="bloque-linea-crear-gif">
+                    <div class="linea-crear-gif"></div>
+                </div>
+
+            </div>
+
+            <div class="btn-sig-gifos montserrat-bold" id="btn-sig-gifos">
+                <div class="btn-ver-mas borde-violeta fuente-violeta" id="comenzar">COMENZAR</div>
+                <div class="btn-ver-mas borde-violeta fuente-violeta" id="grabar">GRABAR</div>
+                <div class="btn-ver-mas borde-violeta fuente-violeta" id="finalizar">FINALIZAR</div>
+                <div class="btn-ver-mas borde-violeta fuente-violeta" id="subir">SUBIR GIFO</div>
+            </div>
+
+        </section>
+        
+    </main>
+
+    <footer id="footer">
+        <section class="bloque-rd">
+            <div class="grupo-rd">
+                <h3 class="h3-compartir roboto-regular">Compartir en:</h3>
+                <div class="redes-sociales">
+                    <a href="https://es-la.facebook.com/" target="_blank"><img class="icon-facebook" src="/images/icon_facebook.svg" alt=""></a>
+                    <a href="https://twitter.com/" target="_blank"><img class="icon-twitter" src="/images/icon-twitter.svg" alt=""></a>
+                    <a href="https://www.instagram.com/" target="_blank"><img class="icon-instagram" src="/images/icon_instagram.svg" alt=""></a>
+                </div>
+            </div>
+
+            <h3 class="derechos roboto-regular">© GIFOS 2020 All Rights Reserved</h3>
+
+        </section>
+
+
+        <div class="linea-violeta"></div>
+    </footer>
+
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+    <script src="/scripts/general.js"></script>
+    <script src="/scripts/modo_nocturno.js"></script>
+    <script src="/scripts/seccion_favoritos.js"></script>
+    <script src="/scripts/seccion_gifos.js"></script>
+    <script src="/scripts/busqueda.js"></script>
+    <script src="/scripts/tranding.js"></script>
+    <script src="/scripts/create_gifos.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+@media screen and (max-width: 999px){
+    footer{
+        text-align: center;
+        .h3-compartir{
+            font-size: 15px;
+            letter-spacing: 0;
+            padding: 47px 0px 24px 0px;
+        }
+        .redes-sociales{
+            .icon-facebook{
+                padding-right: 19px;
+            }
+            .icon-twitter{
+                padding-right: 19px;
+            }
+        }
+        .derechos{
+            padding-top: 47.8px;
+            padding-bottom: 23px;
+            font-size: 14px;
+            letter-spacing: 0;
+            line-height: 20px;
+        }
+
+        .linea-violeta{
+            width: auto;
+            height: 5px;
+            background: #572EE5;
+        }
+    }
+}
+
+
+@media screen and (min-width: 1000px){
+    footer{
+        .bloque-rd{
+            display: flex;
+            justify-content: space-around;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            .grupo-rd{
+                display: flex;
+                .h3-compartir{
+                    font-size: 13px;
+                    letter-spacing: 0;
+                }
+                .redes-sociales{
+                    a{
+                        padding-left: 18px;
+                    }
+                }
+            }
+            .derechos{
+                font-size: 13px;
+                letter-spacing: 0;
+            }
+        }
+        .linea-violeta{
+            width: auto;
+            height: 5px;
+            background: #572EE5;
+        }
+    }
+}
