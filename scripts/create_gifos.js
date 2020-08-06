@@ -2,17 +2,52 @@ var form;
 var blob;
 
 var subir_gif = function () {
+    
+    const controller = new AbortController();
+    const signal = controller.signal;
 
     fetch(`https://upload.giphy.com/v1/gifs?api_key=${api_key}`,
-    {   method: 'POST',
-        mode: 'no-cors',
+    {   
+        method: 'POST',
+        signal,
         body: form  
     })
+        .then((request) => request.json())
+        .then((respuesta) => {
+            if (respuesta.meta.msg == 'OK') {
+                grabar_mi_gifo(respuesta.data.id);
+                btn_crear_gifos();
+            }else{
+                console.log('ha ocurrido un error: ' + respuesta);
+                btn_crear_gifos();
+            }
+        })
+        .catch((err) => {
+            console.log('ha ocurrido un error: ' + err);
+            btn_crear_gifos();
+        })
+}
 
-        .then(request => request.json())
-        .then(() => {console.log('adentro')})
-        .catch((err) => {console.log(err)})
-} 
+function grabar_mi_gifo(id_mi_gifo) {
+
+    let mis_gifos          = JSON.parse(localStorage.getItem('mis_gifos'));
+    let array_mis_gifos    = [];
+    let i                  = 0;
+
+    if (mis_gifos) {
+
+        array_mis_gifos    = JSON.parse(localStorage.getItem('mis_gifos'));
+        i                  = array_mis_gifos.length;
+        array_mis_gifos[i] = id_mi_gifo;
+        localStorage.setItem('mis_gifos', JSON.stringify(array_mis_gifos));
+
+    }else{
+
+        array_mis_gifos[0] = id_mi_gifo
+        localStorage.setItem('mis_gifos', JSON.stringify(array_mis_gifos));
+
+    }
+}
 
 
 async function acceso_camara() {
@@ -124,8 +159,7 @@ subir.addEventListener('mouseout', function () {
     }
 })
 
-
-signo_mas.addEventListener('click', function () {
+function btn_crear_gifos() {
     seccion_crear_gifos.style.display = 'block';
     seccion_favoritos.style.display   = 'none';
     seccion_gifos.style.display       = 'none';
@@ -153,6 +187,10 @@ signo_mas.addEventListener('click', function () {
 
     p_black[0].textContent='¡Crea tu GIFO en sólo 3 pasos!';
     p_black[1].textContent='(sólo necesitas una cámara para grabar un video)'; 
+}
+
+signo_mas.addEventListener('click', function () {
+    btn_crear_gifos();
 })
 
 
