@@ -739,6 +739,7 @@
                 .bloque-btn-gif{
                     display: flex;
                     justify-content: center;
+                    position: relative;
                     .btn-gif{
                         display: flex;
                         justify-content: center;
@@ -752,6 +753,41 @@
                         .gif-p{
                             font-size: 18px;
                             text-align: center;
+                        }
+                    }
+                    .cronometro{
+                        position: relative;
+
+                        .hh-mm-ss{
+                            position: absolute;
+                            justify-content: center;
+                            top: 5px;
+                            left: 185px;
+                            font-size: 15px;
+                            color: #572EE5;
+                            letter-spacing: 0;
+                            text-align: center;
+                            line-height: 22px;
+                        }
+                        .bloque-rep-cap{
+                            position: absolute;
+                            flex-direction: column;
+                            justify-content: center;
+                            width: 131px;
+                            top: 8px;
+                            left: 125px;
+                            cursor: pointer;
+                            .repetir-captura{
+                                font-size: 13px;
+                                color: #572EE5;
+                                letter-spacing: 0;
+                                text-align: center;
+                            }
+                            .linea-verde{
+                                width: 130px;
+                                height: 2px;
+                                border-bottom: 2px solid #5ED7C6;
+                            }
                         }
                     }
                 }

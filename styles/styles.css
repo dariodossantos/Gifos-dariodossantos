@@ -76,7 +76,27 @@ body {
   font-size: 18px;
   text-align: center; }
 
+.opaciti-pantalla {
+  z-index: 2;
+  width: 688px;
+  height: 390px;
+  position: absolute;
+  background-color: #572EE5;
+  opacity: 0.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  .opaciti-pantalla img {
+    width: 22px;
+    height: 22px; }
+  .opaciti-pantalla p {
+    font-size: 15px;
+    color: #FFFFFF;
+    text-align: center; }
+
 .video {
+  z-index: 1;
   width: 688px;
   height: 350px;
   position: absolute;
@@ -936,7 +956,8 @@ body {
       margin-top: 24px; }
       main .seccion-crear-gifos .boton-crear-gifos .bloque-btn-gif {
         display: flex;
-        justify-content: center; }
+        justify-content: center;
+        position: relative; }
         main .seccion-crear-gifos .boton-crear-gifos .bloque-btn-gif .btn-gif {
           display: flex;
           justify-content: center;
@@ -950,6 +971,35 @@ body {
           main .seccion-crear-gifos .boton-crear-gifos .bloque-btn-gif .btn-gif .gif-p {
             font-size: 18px;
             text-align: center; }
+        main .seccion-crear-gifos .boton-crear-gifos .bloque-btn-gif .cronometro {
+          position: relative; }
+          main .seccion-crear-gifos .boton-crear-gifos .bloque-btn-gif .cronometro .hh-mm-ss {
+            position: absolute;
+            justify-content: center;
+            top: 5px;
+            left: 185px;
+            font-size: 15px;
+            color: #572EE5;
+            letter-spacing: 0;
+            text-align: center;
+            line-height: 22px; }
+          main .seccion-crear-gifos .boton-crear-gifos .bloque-btn-gif .cronometro .bloque-rep-cap {
+            position: absolute;
+            flex-direction: column;
+            justify-content: center;
+            width: 131px;
+            top: 8px;
+            left: 125px;
+            cursor: pointer; }
+            main .seccion-crear-gifos .boton-crear-gifos .bloque-btn-gif .cronometro .bloque-rep-cap .repetir-captura {
+              font-size: 13px;
+              color: #572EE5;
+              letter-spacing: 0;
+              text-align: center; }
+            main .seccion-crear-gifos .boton-crear-gifos .bloque-btn-gif .cronometro .bloque-rep-cap .linea-verde {
+              width: 130px;
+              height: 2px;
+              border-bottom: 2px solid #5ED7C6; }
       main .seccion-crear-gifos .boton-crear-gifos .bloque-linea-crear-gif {
         display: flex;
         justify-content: center; }

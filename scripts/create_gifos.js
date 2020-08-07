@@ -1,5 +1,6 @@
 var form;
 var blob;
+var interbal;
 
 var subir_gif = function () {
     
@@ -14,18 +15,60 @@ var subir_gif = function () {
     })
         .then((request) => request.json())
         .then((respuesta) => {
+
             if (respuesta.meta.msg == 'OK') {
+
                 grabar_mi_gifo(respuesta.data.id);
-                btn_crear_gifos();
+
+                gifo_ok()
+                    .then(() => { btn_crear_gifos(); })
+
             }else{
+
+                opaciti_pantalla.classList.remove('display-flex');
+                opaciti_pantalla.classList.add('display-none');
+
                 console.log('ha ocurrido un error: ' + respuesta);
                 btn_crear_gifos();
+
             }
         })
         .catch((err) => {
+
+            opaciti_pantalla.classList.remove('display-flex');
+            opaciti_pantalla.classList.add('display-none');
+
             console.log('ha ocurrido un error: ' + err);
             btn_crear_gifos();
+
         })
+}
+
+function gifo_ok() {
+    opaciti_pantalla.innerHTML = '';
+
+    let div = document.createElement('div');
+    let img = document.createElement('img');
+    let p   = document.createElement('p');
+
+    img.src = '../images/check.svg';
+    div.appendChild(img);
+    p.textContent = 'GIFO subido con éxito';
+
+    opaciti_pantalla.appendChild(div);
+    opaciti_pantalla.appendChild(p);
+
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            
+            opaciti_pantalla.innerHTML = '';
+            opaciti_pantalla.classList.remove('display-flex');
+            opaciti_pantalla.classList.add('display-none');
+
+            resolve(true);
+
+        }, 3000); 
+    })
 }
 
 function grabar_mi_gifo(id_mi_gifo) {
@@ -52,7 +95,8 @@ function grabar_mi_gifo(id_mi_gifo) {
 
 async function acceso_camara() {
     await navigator.mediaDevices.getUserMedia({audio: false, video: true})
-         .then(async function(stream) {
+
+        .then(async function(stream) {
 
             recorder = RecordRTC(stream, {
                 type: 'gif',
@@ -182,19 +226,50 @@ function btn_crear_gifos() {
     btn_gif_p_1.classList.remove('fuente-blanco');
     btn_gif_p_1.classList.add('fuente-violeta');
 
+    btn_gif_2.classList.remove('btn-gif-seleccionado-1');
+    btn_gif_2.classList.remove('background-violeta');
+    btn_gif_2.classList.add('btn-gif');
+
+    btn_gif_p_2.classList.add('fuente-violeta');
+    btn_gif_p_2.classList.remove('fuente-blanco');
+
+    btn_gif_3.classList.remove('btn-gif-seleccionado-1');
+    btn_gif_3.classList.remove('background-violeta');
+    btn_gif_3.classList.add('btn-gif');
+    
+    btn_gif_p_3.classList.remove('fuente-blanco');
+    btn_gif_p_3.classList.add('fuente-violeta');
+
     h3_patalla[0].textContent   = 'Aquí podrás';
     h3_patalla[1].innerHTML   = 'crear tus propios <span class="fuente-verde">GIFOS</span>';
 
     p_black[0].textContent='¡Crea tu GIFO en sólo 3 pasos!';
     p_black[1].textContent='(sólo necesitas una cámara para grabar un video)'; 
+
+    cont_seg  = 0
+    cont_min  = 0
+    cont_hora = 0;
+
+    seg.innerText  = '00'
+    min.innerText  = '00'
+    hora.innerText = '00'
+
+    hh_mm_ss.classList.add('display-none');
+    hh_mm_ss.classList.remove('display-flex');
+
+    bloque_rep_cap.classList.remove('display-flex');
+    bloque_rep_cap.classList.add('display-none');
+
 }
 
 signo_mas.addEventListener('click', function () {
+
     btn_crear_gifos();
+
 })
 
+function func_comenzar() {
 
-comenzar.addEventListener('click', function () {
     comenzar.style.display    = 'none';
     grabar.style.display      = 'flex';
     finalizar.style.display   = 'none';
@@ -213,23 +288,106 @@ comenzar.addEventListener('click', function () {
     btn_gif_p_1.classList.remove('fuente-violeta');
     btn_gif_p_1.classList.add('fuente-blanco');
 
+    btn_gif_2.classList.remove('btn-gif-seleccionado-1');
+    btn_gif_2.classList.remove('background-violeta');
+    btn_gif_2.classList.add('btn-gif');
 
-    acceso_camara();
+    btn_gif_p_2.classList.add('fuente-violeta');
+    btn_gif_p_2.classList.remove('fuente-blanco');
 
-    console.log('Paso 2');    
+    btn_gif_3.classList.remove('btn-gif-seleccionado-1');
+    btn_gif_3.classList.remove('background-violeta');
+    btn_gif_3.classList.add('btn-gif');
+    
+    btn_gif_p_3.classList.remove('fuente-blanco');
+    btn_gif_p_3.classList.add('fuente-violeta');
+
+    cont_seg  = 0
+    cont_min  = 0
+    cont_hora = 0;
+
+    seg.innerText  = '00'
+    min.innerText  = '00'
+    hora.innerText = '00'
+
+    try {
+
+        acceso_camara();  
+
+    } catch (error) {
+
+        alert('Error para acceder a la camara: ' + error)
+
+    }
+}
+
+comenzar.addEventListener('click', function () {
+
+    func_comenzar();
+
 })
 
 
 grabar.addEventListener('click', function () {
+
     comenzar.style.display    = 'none';
     grabar.style.display      = 'none';
     finalizar.style.display   = 'flex';
     subir.style.display       = 'none';
     video.style.display       = 'block';
 
-    recorder.startRecording();
+    btn_gif_1.classList.remove('btn-gif-seleccionado-1');
+    btn_gif_1.classList.remove('background-violeta');
+    btn_gif_1.classList.add('btn-gif');
+    
+    btn_gif_p_1.classList.remove('fuente-blanco');
+    btn_gif_p_1.classList.add('fuente-violeta');
 
-    console.log('Paso 3');    
+    btn_gif_2.classList.add('btn-gif-seleccionado-1');
+    btn_gif_2.classList.add('background-violeta');
+    btn_gif_2.classList.remove('btn-gif');
+
+    btn_gif_p_2.classList.remove('fuente-violeta');
+    btn_gif_p_2.classList.add('fuente-blanco');
+    
+
+    try {
+        recorder.startRecording();
+
+        hh_mm_ss.classList.remove('display-none');
+        hh_mm_ss.classList.add('display-flex');
+    
+        bloque_rep_cap.classList.remove('display-flex');
+        bloque_rep_cap.classList.add('display-none');
+
+        interbal = 
+        setInterval(function cronometro() {
+    
+            cont_seg = cont_seg + 1
+    
+            if (cont_seg == 60) {
+                cont_seg = 0;
+                cont_min = cont_min + 1
+            }
+    
+            if (cont_min == 60) {
+                cont_min = 0;
+                cont_hora = cont_hora + 1
+            }
+    
+            seg.innerText  = cont_seg  < 10 ? '0' + cont_seg : cont_seg
+            min.innerText  = cont_min  < 10 ? '0' + cont_min : cont_min
+            hora.innerText = cont_hora < 10 ? '0' + cont_hora : cont_hora
+    
+        }, 1000);
+
+    } catch (error) {
+
+        alert('Error para comenzar a Grabar, intente nuevamente: ' + error)
+        func_comenzar();
+
+    }    
+    
 })
 
 
@@ -240,20 +398,58 @@ finalizar.addEventListener('click', function () {
     subir.style.display       = 'flex';
     video.style.display       = 'block';
 
+    btn_gif_1.classList.remove('btn-gif-seleccionado-1');
+    btn_gif_1.classList.remove('background-violeta');
+    btn_gif_1.classList.add('btn-gif');
+    
+    btn_gif_p_1.classList.remove('fuente-blanco');
+    btn_gif_p_1.classList.add('fuente-violeta');
 
+    btn_gif_2.classList.add('btn-gif-seleccionado-1');
+    btn_gif_2.classList.add('background-violeta');
+    btn_gif_2.classList.remove('btn-gif');
 
-    recorder.stopRecording(function() {
+    btn_gif_p_2.classList.remove('fuente-violeta');
+    btn_gif_p_2.classList.add('fuente-blanco');
 
-        blob = recorder.getBlob();
-        /* invokeSaveAsDialog(blob); */
+    clearInterval(interbal);
+    
+    try {
 
-        form = new FormData();
-        form.append('file', blob, 'myGif.gif');
-        return form;
+        recorder.stopRecording(function() {
 
-        console.log(blob)
+            blob = recorder.getBlob();
+            /* invokeSaveAsDialog(blob); */
+    
+            form = new FormData();
+            form.append('file', blob, 'myGif.gif');
+            return form;
+    
+            });
 
-        });
+    } catch (error) {
+
+        alert('Error al finlizar la grabacion ' + error);
+        func_comenzar();
+
+    }
+
+    hh_mm_ss.classList.add('display-none');
+    hh_mm_ss.classList.remove('display-flex');
+
+    bloque_rep_cap.classList.add('display-flex');
+    bloque_rep_cap.classList.remove('display-none');
+
+    bloque_rep_cap.addEventListener('click', function () {
+
+        hh_mm_ss.classList.remove('display-none');
+        hh_mm_ss.classList.add('display-flex');
+    
+        bloque_rep_cap.classList.remove('display-flex');
+        bloque_rep_cap.classList.add('display-none');
+
+        func_comenzar();
+    })    
 
 })
 
@@ -283,9 +479,50 @@ subir.addEventListener('click', function () {
     subir.style.display       = 'flex';
     video.style.display       = 'block';
 
-    /* console.log(file_api); */
+    btn_gif_1.classList.remove('btn-gif-seleccionado-1');
+    btn_gif_1.classList.remove('background-violeta');
+    btn_gif_1.classList.add('btn-gif');
+    
+    btn_gif_p_1.classList.remove('fuente-blanco');
+    btn_gif_p_1.classList.add('fuente-violeta');
 
-    subir_gif();
+    btn_gif_2.classList.remove('btn-gif-seleccionado-1');
+    btn_gif_2.classList.remove('background-violeta');
+    btn_gif_2.classList.add('btn-gif');
+
+    btn_gif_p_2.classList.add('fuente-violeta');
+    btn_gif_p_2.classList.remove('fuente-blanco');
+
+    btn_gif_3.classList.add('btn-gif-seleccionado-1');
+    btn_gif_3.classList.add('background-violeta');
+    btn_gif_3.classList.remove('btn-gif');
+
+    btn_gif_p_3.classList.remove('fuente-violeta');
+    btn_gif_p_3.classList.add('fuente-blanco');
+
+    try {
+        opaciti_pantalla.classList.remove('display-none');
+        opaciti_pantalla.classList.add('display-flex');
+
+        let div = document.createElement('div');
+        let img = document.createElement('img');
+        let p   = document.createElement('p');
+    
+        img.src = '../images/loader.svg';
+        div.appendChild(img);
+        p.textContent = 'Estamos subiendo tu GIFO';
+    
+        opaciti_pantalla.appendChild(div);
+        opaciti_pantalla.appendChild(p);
+
+        subir_gif();
+
+    } catch (error) {
+
+        alert('Error al cargar GIF en GIPHY: ' + error)
+        func_comenzar();
+        
+    }
 
 })
 

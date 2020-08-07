@@ -76,6 +76,13 @@ var comenzar                      = document.querySelector('#comenzar');
 var grabar                        = document.querySelector('#grabar');
 var finalizar                     = document.querySelector('#finalizar');
 var subir                         = document.querySelector('#subir');
+var hh_mm_ss                      = document.getElementById('hh-mm-ss');
+var hora                          = document.querySelector('#hora');
+var min                           = document.querySelector('#min');
+var seg                           = document.querySelector('#seg');
+var bloque_rep_cap                = document.getElementById('bloque-rep-cap');
+var pantalla                      = document.getElementById('pantalla');
+var opaciti_pantalla              = document.getElementById('opaciti-pantalla');
 
 
 //*bandera*//
@@ -84,6 +91,9 @@ var offset                        = 0;
 var offset_trandig                = 0;
 var index_ini                     = 0;
 var index_fin                     = 0;
+var cont_seg                      = 0;
+var cont_min                      = 0;
+var cont_hora                     = 0;
 
 
 seccion_favoritos.style.display   = 'none';

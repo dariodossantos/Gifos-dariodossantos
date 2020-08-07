@@ -123,7 +123,8 @@
             <div class="crear-gifos">
                 <img class="img-camara" id="img-camara" src="/images/camara.svg" alt="Camara Gifos">
                 <img class="img-luz"   src="/images/element-luz-camara.svg" alt="">
-                <div class="pantalla">
+                <div class="pantalla" id="pantalla">
+                    <div class="opaciti-pantalla montserrat-bold display-none" id="opaciti-pantalla"></div>
                     <video class="video" id="video"></video>
                     <span class="borde-arriba-izq"></span>
                     <span class="borde-arriba-der"></span>
@@ -145,6 +146,20 @@
                     <div class="btn-gif borde-violeta" id="btn-gif-1"><p class="gif-p fuente-violeta">1</p></div>
                     <div class="btn-gif borde-violeta" id="btn-gif-2"><p class="gif-p fuente-violeta">2</p></div>
                     <div class="btn-gif borde-violeta" id="btn-gif-3"><p class="gif-p fuente-violeta">3</p></div>
+                    <div class="cronometro montserrat-bold">
+                        <div class="hh-mm-ss display-none" id="hh-mm-ss">
+                            <div class="hora" id="hora">00</div>
+                            <div>:</div>
+                            <div class="min" id="min">00</div>
+                            <div>:</div>
+                            <div class="seg" id="seg">00</div>
+                        </div>
+
+                        <div class="bloque-rep-cap display-none" id="bloque-rep-cap">
+                            <div class="repetir-captura" id="repetir-captura">REPETIR CAPTURA</div>
+                            <div class="linea-verde" id="linea-verde"></div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="bloque-linea-crear-gif">
