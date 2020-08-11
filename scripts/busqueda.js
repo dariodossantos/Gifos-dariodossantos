@@ -365,6 +365,11 @@ function get_autocompletar(event) {
  
             clear_autocompletado(); 
 
+            if(respuesta.data.length == 0) {
+                autocompletar.style.display   = 'none';
+                img_lupa.src  = '../images/icon-search.svg';
+            }
+
             for (let i = 0; i < respuesta.data.length; i++) {
                 img_lupa.src  = '../images/close.svg';
                 autocompletado(respuesta.data[i].name);
@@ -418,10 +423,24 @@ search.addEventListener('input', function(event) {
 
 /* eliminar cuando hace Clik en close*/
 close.addEventListener('click', function() {
-    clear_autocompletado();
-    search.value='';
-    autocompletar.style.display   = 'none';
-    img_lupa.src  = '../images/icon-search.svg';
+
+    if(!autocompletar.firstChild){
+
+        seccion_res_bus.style.display = 'block';
+        autocompletar.style.display   = 'none';
+        offset = 0;
+        valor_ant = search.value
+        clear_busqueda();
+        get_busqueda();
+
+    }else{
+
+        clear_autocompletado();
+        search.value='';
+        autocompletar.style.display   = 'none';
+        img_lupa.src  = '../images/icon-search.svg';
+
+    }
 })
 
 

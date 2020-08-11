@@ -135,9 +135,7 @@
                 justify-content: center;
                 flex-wrap: wrap;
                 .tarjetas-favoritos{
-                    display: inline-block;
                     margin: 0px 15px 15px 15px;
-                    background: slategray;
                     .img-fav{
                         width: 156px;
                         height: 120px;
@@ -164,6 +162,7 @@
         }
 
         .seccion-gifos{
+            margin-bottom: 78px;
             .img-gif{
                 display: flex;
                 justify-content: center;
@@ -179,11 +178,11 @@
                 justify-content: center;
                 flex-wrap: wrap;
                 .tarjetas-gifos{
-                    display: inline-block;
-                    width: 156px;
-                    height: 120px;
-                    margin: 0px 20px 25px 20px;
-                    background: slategray;
+                    margin: 0px 15px 15px 15px;
+                    .img-gif{
+                        width: 156px;
+                        height: 120px;
+                    }
                 }
             }
             .btn-gif{
@@ -555,6 +554,7 @@
         }
 
         .seccion-gifos{
+            margin-bottom: 80px;
             .img-gif{
                 display: flex;
                 justify-content: center;
@@ -570,11 +570,77 @@
                 justify-content: center;
                 flex-wrap: wrap;
                 .tarjetas-gifos{
-                    display: inline-block;
-                    width: 260px;
-                    height: 200px;
+                    position: relative;
                     margin: 0px 29px 35px 0px;
-                    background: slategray;
+                    .img-gif{
+                        width: 260px;
+                        height: 200px;
+                        z-index: 9;
+                        &:hover{
+                            opacity: 0.6;
+                            background: #572EE5;
+                        }
+                    }
+                    .borrar{
+                        width: 32px;
+                        height: 32px;
+                        position: absolute;
+                        top: 10px;
+                        right: 95px;
+                        opacity: 0.7;
+                        background: #FFFFFF;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        z-index: 99;
+                        justify-content: center;
+                        align-items: center;
+                        .img{
+                            width: 18px;
+                            height: 18px;
+                            opacity: 0.7;
+                            z-index: 98;
+                        }
+                    }
+                    .descargar{
+                        width: 32px;
+                        height: 32px;
+                        position: absolute;
+                        top: 10px;
+                        right: 52px;
+                        opacity: 0.7;
+                        background: #FFFFFF;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        z-index: 99;
+                        justify-content: center;
+                        align-items: center;
+                        .img{
+                            width: 18px;
+                            height: 18px;
+                            opacity: 0.7;
+                            z-index: 98;
+                        }
+                    }
+                    .zoom{
+                        width: 32px;
+                        height: 32px;
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                        opacity: 0.7;
+                        background: #FFFFFF;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        z-index: 99;
+                        justify-content: center;
+                        align-items: center;
+                        .img{
+                            width: 18px;
+                            height: 18px;
+                            opacity: 0.7;
+                            z-index: 98;
+                        }
+                    }
                 }
             }
             .btn-gif{

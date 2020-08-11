@@ -274,7 +274,6 @@ function crear_tarjetas_fav() {
         div.appendChild(img);
         div.appendChild(p);
 
-        div.classList.add('tarjetas-favoritos-vacio');
         tarjetas_favoritos.appendChild(div);
         btn_fav.style.display = 'none';
 
@@ -321,16 +320,8 @@ favoritos.addEventListener('click', function () {
     var tarj_fav_class         = document.querySelectorAll('.tarjetas-favoritos');
     var tarj_fav__vacio_class  = document.querySelectorAll('.tarjetas-favoritos-vacio');
 
-    while (tarjetas_favoritos.hasChildNodes()) {
 
-        for (let i = 0; i < tarj_fav_class.length; i++) {
-            tarjetas_favoritos.removeChild(tarj_fav_class[i]);
-        }
-
-        for (let i = 0; i < tarj_fav__vacio_class.length; i++) {
-            tarjetas_favoritos.removeChild(tarj_fav__vacio_class[i]);
-        }
-    } 
+    tarjetas_favoritos.innerHTML = ' ';
 
     crear_tarjetas_fav();
 

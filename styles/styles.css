@@ -465,9 +465,7 @@ body {
       justify-content: center;
       flex-wrap: wrap; }
       main .seccion-favoritos .tarj-fav .tarjetas-favoritos {
-        display: inline-block;
-        margin: 0px 15px 15px 15px;
-        background: slategray; }
+        margin: 0px 15px 15px 15px; }
         main .seccion-favoritos .tarj-fav .tarjetas-favoritos .img-fav {
           width: 156px;
           height: 120px; }
@@ -486,39 +484,40 @@ body {
         font-size: 13px;
         letter-spacing: 0;
         text-align: center; }
-  main .seccion-gifos .img-gif {
-    display: flex;
-    justify-content: center; }
-  main .seccion-gifos h4 {
-    text-align: center;
-    font-size: 30px;
-    line-height: 30px;
-    margin-bottom: 38px; }
-  main .seccion-gifos .tarj-gif {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; }
-    main .seccion-gifos .tarj-gif .tarjetas-gifos {
-      display: inline-block;
-      width: 156px;
-      height: 120px;
-      margin: 0px 20px 25px 20px;
-      background: slategray; }
-  main .seccion-gifos .btn-gif {
-    display: flex;
-    justify-content: center;
-    margin-top: 43px;
-    margin-bottom: 79px; }
-    main .seccion-gifos .btn-gif .btn-ver-mas {
+  main .seccion-gifos {
+    margin-bottom: 78px; }
+    main .seccion-gifos .img-gif {
+      display: flex;
+      justify-content: center; }
+    main .seccion-gifos h4 {
+      text-align: center;
+      font-size: 30px;
+      line-height: 30px;
+      margin-bottom: 38px; }
+    main .seccion-gifos .tarj-gif {
       display: flex;
       justify-content: center;
-      align-items: center;
-      width: 127px;
-      height: 50px;
-      border-radius: 25px;
-      font-size: 13px;
-      letter-spacing: 0;
-      text-align: center; }
+      flex-wrap: wrap; }
+      main .seccion-gifos .tarj-gif .tarjetas-gifos {
+        margin: 0px 15px 15px 15px; }
+        main .seccion-gifos .tarj-gif .tarjetas-gifos .img-gif {
+          width: 156px;
+          height: 120px; }
+    main .seccion-gifos .btn-gif {
+      display: flex;
+      justify-content: center;
+      margin-top: 43px;
+      margin-bottom: 79px; }
+      main .seccion-gifos .btn-gif .btn-ver-mas {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 127px;
+        height: 50px;
+        border-radius: 25px;
+        font-size: 13px;
+        letter-spacing: 0;
+        text-align: center; }
   main .trending-gifos {
     text-align: center; }
     main .trending-gifos .trending-gifos-h2 {
@@ -806,40 +805,100 @@ body {
         letter-spacing: 0;
         text-align: center;
         cursor: pointer; }
-  main .seccion-gifos .img-gif {
-    display: flex;
-    justify-content: center; }
-  main .seccion-gifos h4 {
-    text-align: center;
-    font-size: 30px;
-    line-height: 30px;
-    margin-bottom: 38px; }
-  main .seccion-gifos .tarj-gif {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; }
-    main .seccion-gifos .tarj-gif .tarjetas-gifos {
-      display: inline-block;
-      width: 260px;
-      height: 200px;
-      margin: 0px 29px 35px 0px;
-      background: slategray; }
-  main .seccion-gifos .btn-gif {
-    display: flex;
-    justify-content: center;
-    margin-top: 43px;
-    margin-bottom: 79px;
-    cursor: pointer; }
-    main .seccion-gifos .btn-gif .btn-ver-mas {
+  main .seccion-gifos {
+    margin-bottom: 80px; }
+    main .seccion-gifos .img-gif {
+      display: flex;
+      justify-content: center; }
+    main .seccion-gifos h4 {
+      text-align: center;
+      font-size: 30px;
+      line-height: 30px;
+      margin-bottom: 38px; }
+    main .seccion-gifos .tarj-gif {
       display: flex;
       justify-content: center;
-      align-items: center;
-      width: 127px;
-      height: 50px;
-      border-radius: 25px;
-      font-size: 13px;
-      letter-spacing: 0;
-      text-align: center; }
+      flex-wrap: wrap; }
+      main .seccion-gifos .tarj-gif .tarjetas-gifos {
+        position: relative;
+        margin: 0px 29px 35px 0px; }
+        main .seccion-gifos .tarj-gif .tarjetas-gifos .img-gif {
+          width: 260px;
+          height: 200px;
+          z-index: 9; }
+          main .seccion-gifos .tarj-gif .tarjetas-gifos .img-gif:hover {
+            opacity: 0.6;
+            background: #572EE5; }
+        main .seccion-gifos .tarj-gif .tarjetas-gifos .borrar {
+          width: 32px;
+          height: 32px;
+          position: absolute;
+          top: 10px;
+          right: 95px;
+          opacity: 0.7;
+          background: #FFFFFF;
+          border-radius: 6px;
+          cursor: pointer;
+          z-index: 99;
+          justify-content: center;
+          align-items: center; }
+          main .seccion-gifos .tarj-gif .tarjetas-gifos .borrar .img {
+            width: 18px;
+            height: 18px;
+            opacity: 0.7;
+            z-index: 98; }
+        main .seccion-gifos .tarj-gif .tarjetas-gifos .descargar {
+          width: 32px;
+          height: 32px;
+          position: absolute;
+          top: 10px;
+          right: 52px;
+          opacity: 0.7;
+          background: #FFFFFF;
+          border-radius: 6px;
+          cursor: pointer;
+          z-index: 99;
+          justify-content: center;
+          align-items: center; }
+          main .seccion-gifos .tarj-gif .tarjetas-gifos .descargar .img {
+            width: 18px;
+            height: 18px;
+            opacity: 0.7;
+            z-index: 98; }
+        main .seccion-gifos .tarj-gif .tarjetas-gifos .zoom {
+          width: 32px;
+          height: 32px;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          opacity: 0.7;
+          background: #FFFFFF;
+          border-radius: 6px;
+          cursor: pointer;
+          z-index: 99;
+          justify-content: center;
+          align-items: center; }
+          main .seccion-gifos .tarj-gif .tarjetas-gifos .zoom .img {
+            width: 18px;
+            height: 18px;
+            opacity: 0.7;
+            z-index: 98; }
+    main .seccion-gifos .btn-gif {
+      display: flex;
+      justify-content: center;
+      margin-top: 43px;
+      margin-bottom: 79px;
+      cursor: pointer; }
+      main .seccion-gifos .btn-gif .btn-ver-mas {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 127px;
+        height: 50px;
+        border-radius: 25px;
+        font-size: 13px;
+        letter-spacing: 0;
+        text-align: center; }
   main .trending-gifos {
     text-align: center; }
     main .trending-gifos .trending-gifos-h2 {
