@@ -110,6 +110,19 @@ function mostar_mis_gif(url, id_mi_gif) {
             div_descargar.style.opacity = '0.7'
         })
 
+        div_descargar.addEventListener('click', function() {
+
+            /* const gifFile = await URL.createObjectURL(gifBlob); // Convierte blob */
+            const saveGif = document.createElement('a'); // Crea elemento anchor
+            saveGif.setAttribute('target','_blank');
+            saveGif.href = url; // Asigna url
+            saveGif.download = ''; // Elije un filename aleatorio
+            document.body.appendChild(saveGif);
+            saveGif.click();
+            document.body.removeChild(saveGif);
+
+        })
+
         /*Hover ZOOM */
         div_zoom.addEventListener('mouseover', function() {
             div_zoom.style.opacity = '1'
@@ -204,6 +217,19 @@ function mostar_mis_gif(url, id_mi_gif) {
             div_img_des_mob.src = '../images/icon-download.svg';
             div_img_des_mob.classList.add('agregar-mob');
             agrupa_mob.appendChild(div_img_des_mob);
+
+            div_img_des_mob.addEventListener('click', function() {
+                    
+                /* const gifFile = await URL.createObjectURL(gifBlob); // Convierte blob */
+                const saveGif = document.createElement("a"); // Crea elemento anchor
+                saveGif.setAttribute('target','_blank');
+                saveGif.href = url; // Asigna url
+                saveGif.download = ''; // Elije un filename aleatorio
+                document.body.appendChild(saveGif);
+                saveGif.click();
+                document.body.removeChild(saveGif);
+
+            })
             /* FIN - descargar mobile */
 
             div.appendChild(agrupa_mob);
