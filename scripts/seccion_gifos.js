@@ -112,14 +112,11 @@ function mostar_mis_gif(url, id_mi_gif) {
 
         div_descargar.addEventListener('click', function() {
 
-/*             let binaryData = [];
-            binaryData.push(url);
-            window.URL.createObjectURL(new Blob(binaryData, {type: "image/gif"})) */
-
             async function prueba() {
                 let blob = await fetch(url).then(r => r.blob());
                 invokeSaveAsDialog(blob);
             }
+
             prueba();
 
         })
@@ -225,6 +222,7 @@ function mostar_mis_gif(url, id_mi_gif) {
                     let blob = await fetch(url).then(r => r.blob());
                     invokeSaveAsDialog(blob);
                 }
+                
                 prueba();
 
             })

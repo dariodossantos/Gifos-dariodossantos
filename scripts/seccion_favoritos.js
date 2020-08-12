@@ -145,6 +145,7 @@ function crear_tarjetas_fav() {
                         let blob = await fetch(gif_activos[i].url).then(r => r.blob());
                         invokeSaveAsDialog(blob);
                     }
+                    
                     prueba();
 
                 })
@@ -252,6 +253,7 @@ function crear_tarjetas_fav() {
                             let blob = await fetch(gif_activos[i].url).then(r => r.blob());
                             invokeSaveAsDialog(blob);
                         }
+
                         prueba();
     
                     })
