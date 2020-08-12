@@ -112,14 +112,24 @@ function mostar_mis_gif(url, id_mi_gif) {
 
         div_descargar.addEventListener('click', function() {
 
-            /* const gifFile = await URL.createObjectURL(gifBlob); // Convierte blob */
-            const saveGif = document.createElement('a'); // Crea elemento anchor
+/*             let binaryData = [];
+            binaryData.push(url);
+            window.URL.createObjectURL(new Blob(binaryData, {type: "image/gif"})) */
+
+            async function prueba() {
+                let blob = await fetch(url).then(r => r.blob());
+                invokeSaveAsDialog(blob);
+            }
+            prueba();
+
+/*             const gifFile = await URL.createObjectURL(binaryData); // Convierte blob */
+/*             const saveGif = document.createElement('a'); // Crea elemento anchor
             saveGif.setAttribute('target','_blank');
             saveGif.href = url; // Asigna url
             saveGif.download = ''; // Elije un filename aleatorio
             document.body.appendChild(saveGif);
             saveGif.click();
-            document.body.removeChild(saveGif);
+            document.body.removeChild(saveGif);   */
 
         })
 
@@ -219,15 +229,16 @@ function mostar_mis_gif(url, id_mi_gif) {
             agrupa_mob.appendChild(div_img_des_mob);
 
             div_img_des_mob.addEventListener('click', function() {
-                    
+                debugger
+                invokeSaveAsDialog(url); 
                 /* const gifFile = await URL.createObjectURL(gifBlob); // Convierte blob */
-                const saveGif = document.createElement("a"); // Crea elemento anchor
+/*                 const saveGif = document.createElement("a"); // Crea elemento anchor
                 saveGif.setAttribute('target','_blank');
                 saveGif.href = url; // Asigna url
                 saveGif.download = ''; // Elije un filename aleatorio
                 document.body.appendChild(saveGif);
                 saveGif.click();
-                document.body.removeChild(saveGif);
+                document.body.removeChild(saveGif); */
 
             })
             /* FIN - descargar mobile */
