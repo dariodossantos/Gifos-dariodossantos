@@ -122,15 +122,6 @@ function mostar_mis_gif(url, id_mi_gif) {
             }
             prueba();
 
-/*             const gifFile = await URL.createObjectURL(binaryData); // Convierte blob */
-/*             const saveGif = document.createElement('a'); // Crea elemento anchor
-            saveGif.setAttribute('target','_blank');
-            saveGif.href = url; // Asigna url
-            saveGif.download = ''; // Elije un filename aleatorio
-            document.body.appendChild(saveGif);
-            saveGif.click();
-            document.body.removeChild(saveGif);   */
-
         })
 
         /*Hover ZOOM */
@@ -235,15 +226,6 @@ function mostar_mis_gif(url, id_mi_gif) {
                     invokeSaveAsDialog(blob);
                 }
                 prueba();
-                
-                /* const gifFile = await URL.createObjectURL(gifBlob); // Convierte blob */
-/*                 const saveGif = document.createElement("a"); // Crea elemento anchor
-                saveGif.setAttribute('target','_blank');
-                saveGif.href = url; // Asigna url
-                saveGif.download = ''; // Elije un filename aleatorio
-                document.body.appendChild(saveGif);
-                saveGif.click();
-                document.body.removeChild(saveGif); */
 
             })
             /* FIN - descargar mobile */
