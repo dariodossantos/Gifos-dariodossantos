@@ -229,8 +229,13 @@ function mostar_mis_gif(url, id_mi_gif) {
             agrupa_mob.appendChild(div_img_des_mob);
 
             div_img_des_mob.addEventListener('click', function() {
-                debugger
-                invokeSaveAsDialog(url); 
+
+                async function prueba() {
+                    let blob = await fetch(url).then(r => r.blob());
+                    invokeSaveAsDialog(blob);
+                }
+                prueba();
+                
                 /* const gifFile = await URL.createObjectURL(gifBlob); // Convierte blob */
 /*                 const saveGif = document.createElement("a"); // Crea elemento anchor
                 saveGif.setAttribute('target','_blank');
